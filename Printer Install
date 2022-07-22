@@ -1,0 +1,13 @@
+## PS commands in the specific order to install a printer. 
+## Each item in quotations (Driver Name, Port Name, etc.) need to stay consistent.
+## When choosing the "Driver Name" the proper names can be found within the .inf file that has been placed into the Sys32\DriverStore.
+#
+
+pnputil.exe /a "\\fileshare\directory\*.inf"
+
+Add-PrinterDriver -Name "Driver Name" -InfPath "C:\Windows\System32\DriverStore\FileRepository\ssk5m.inf_amd64_9e4559a26479af7a\ssk5m.inf"
+
+Add-PrinterPort -Name "Port Name" -PrinterHostAddress "<IP Address>"
+
+Add-Printer -DriverName "Driver Name" -Name "Printer Name" -PortName "Port Name"
+
